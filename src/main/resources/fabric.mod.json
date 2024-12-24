@@ -1,25 +1,41 @@
 {
-  "schemaVersion": 1,
-  "id": "proper-mobcap-modifier",
-  "version": "${version}",
-  "name": "Proper Mobcap Modifier",
-  "description": "Compatible mob cap editing",
-  "authors": ["vlad2305m"],
-  "contact": {},
-  "license": "MIT",
-  "icon": "assets/proper_mobcap_modifier/icon.png",
-  "environment": "*",
-  "entrypoints": {
-    "main": [
-      "com.vlad2305m.propermobcapmodifier.ProperMobcapModifier"
-    ]
-  },
-  "mixins": [
-    "proper-mobcap-modifier.mixins.json"
-  ],
-  "depends": {
-    "cloth-config2": ">=7.0.0",
-    "fabricloader": ">=0.14.6",
-    "minecraft": ">=1.20"
-  }
+	"schemaVersion": 1,
+	"id": "proper-mobcap-modifier-fabric",
+	"version": "${version}",
+	"name": "Proper Mobcap Modifier Fabric",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/proper-mobcap-modifier-fabric/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"jp.priv.util.ProperMobcapModifierFabric"
+		],
+		"client": [
+			"jp.priv.util.ProperMobcapModifierFabricClient"
+		]
+	},
+	"mixins": [
+		"proper-mobcap-modifier-fabric.mixins.json",
+		{
+			"config": "proper-mobcap-modifier-fabric.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.9",
+		"minecraft": "~1.21.4",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
 }
